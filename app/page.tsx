@@ -27,7 +27,7 @@ interface CountdownTimerProps {
 }
 
 export default function AdvancedCountdownTimer({
-  initialMinutes = 1,
+  initialMinutes = 5,
 }: CountdownTimerProps) {
   const [timeLeft, setTimeLeft] = useState(initialMinutes * 60);
   const [isActive, setIsActive] = useState(false);

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import { url } from "inspector";
 import Script from "next/script";
 
 const geistSans = Poppins({
@@ -24,7 +23,7 @@ export const metadata: Metadata = {
     siteName: "Countdown Timer",
     images: [
       {
-        url: `${baseUrl}/og-image.png`,
+        url: `${baseUrl}/og-image.jpg`,
         width: 1200,
         height: 630,
         alt: "Countdown Timer App",
@@ -38,12 +37,10 @@ export const metadata: Metadata = {
     title: "Countdown Timer | Advanced Timer App",
     description:
       "A feature-rich countdown timer app with customizable settings, themes, and notifications to help you manage your time effectively.",
-    images: [`${baseUrl}/og-image.png`],
+    images: [`${baseUrl}/og-image.jpg`],
   },
   icons: {
     icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
   },
   manifest: "/site.webmanifest",
   authors: [
@@ -66,7 +63,7 @@ const jsonLd = {
     "A feature-rich countdown timer app with customizable settings, themes, and notifications to help you manage your time effectively.",
   applicationCategory: "ProductivityApplication",
   operatingSystem: "All",
-  image: `${baseUrl}/og-image.png`,
+  image: `${baseUrl}/og-image.jpg`,
   datepublished: "2025-10-20",
   author: "Muhammad Sheraz",
   publisher: "Muhammad Sheraz",
