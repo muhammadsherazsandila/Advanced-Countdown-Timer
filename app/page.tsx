@@ -607,7 +607,7 @@ export default function AdvancedCountdownTimer({
               {isActive
                 ? "Counting down..."
                 : timeLeft === 0
-                ? `Time${(<span>&apos;</span>)}s up!`
+                ? `Time up!`
                 : "Ready"}
             </motion.div>
           </motion.div>
