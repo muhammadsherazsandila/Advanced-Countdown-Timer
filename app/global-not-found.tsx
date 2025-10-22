@@ -2,6 +2,7 @@ import { Home, Search, ArrowLeft, AlertCircle } from "lucide-react";
 import "./globals.css";
 import { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import Link from "next/link";
 function NotFound() {
   return (
     <div className="min-h-screen bg-linear-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center px-4">
@@ -27,21 +28,21 @@ function NotFound() {
 
         {/* Action Buttons */}
         <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
-          <a
+          <Link
             href="/"
             className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-purple-500/50"
           >
             <Home className="w-5 h-5" />
             Go Home
-          </a>
+          </Link>
 
-          <a
+          <Link
             href="/"
             className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white font-semibold rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
           >
             <ArrowLeft className="w-5 h-5" />
             Go Back
-          </a>
+          </Link>
         </div>
 
         {/* Search Suggestion */}
