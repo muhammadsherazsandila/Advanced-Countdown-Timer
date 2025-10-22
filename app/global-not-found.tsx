@@ -21,8 +21,8 @@ function NotFound() {
         <div className="mt-8 space-y-4">
           <h2 className="text-3xl font-bold text-white">Page Not Found</h2>
           <p className="text-gray-300 text-lg">
-            Oops! The page you're looking for seems to have wandered off into
-            the digital void.
+            Oops! The page you&apos;re looking for seems to have wandered off
+            into the digital void.
           </p>
         </div>
 
