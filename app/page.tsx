@@ -21,6 +21,14 @@ interface CountdownTimerProps {
   initialMinutes?: number;
 }
 
+type Theme = "neon" | "sunset" | "ocean" | "forest";
+
+declare global {
+  interface Window {
+    webkitAudioContext: typeof AudioContext;
+  }
+}
+
 export default function AdvancedCountdownTimer({
   initialMinutes = 5,
 }: CountdownTimerProps) {
@@ -29,12 +37,9 @@ export default function AdvancedCountdownTimer({
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [initialTime, setInitialTime] = useState(initialMinutes * 60);
   const [showDeveloperLinksSet, setShowDeveloperLinksSet] = useState(false);
-  const [theme, setTheme] = useState<"neon" | "sunset" | "ocean" | "forest">(
-    "neon"
-  );
+  const [theme, setTheme] = useState<Theme>("neon");
   const [showSettings, setShowSettings] = useState(false);
   const [showAdjustTime, setShowAdjustTime] = useState(false);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const particlesRef = useRef<HTMLDivElement>(null);
 
@@ -127,7 +132,7 @@ export default function AdvancedCountdownTimer({
     beepSequence.forEach((freq, index) => {
       setTimeout(() => {
         const audioContext = new (window.AudioContext ||
-          (window as any).webkitAudioContext)();
+          window.webkitAudioContext)();
         const oscillator = audioContext.createOscillator();
         const gainNode = audioContext.createGain();
 
@@ -381,7 +386,7 @@ export default function AdvancedCountdownTimer({
                   key={key}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  onClick={() => setTheme(key as any)}
+                  onClick={() => setTheme(key as Theme)}
                   className={`p-3 rounded-xl border-2 transition-all duration-300 ${
                     theme === key ? "border-white" : "border-white/20"
                   }`}
@@ -602,7 +607,7 @@ export default function AdvancedCountdownTimer({
               {isActive
                 ? "Counting down..."
                 : timeLeft === 0
-                ? "Time's up!"
+                ? `Time${(<span>&apos;</span>)}s up!`
                 : "Ready"}
             </motion.div>
           </motion.div>
