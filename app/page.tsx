@@ -12,13 +12,8 @@ import {
   Maximize,
   Minimize,
   Settings,
-  Zap,
-  Moon,
-  Sun,
-  Icon,
   Clock4,
   TimerReset,
-  Github,
   UserRoundPen,
 } from "lucide-react";
 
