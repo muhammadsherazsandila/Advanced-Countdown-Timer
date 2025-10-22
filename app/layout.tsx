@@ -9,7 +9,7 @@ const geistSans = Poppins({
   weight: ["400", "500", "600", "700"],
 });
 
-const baseUrl = "https://countdown-timer-app.example.com";
+const baseUrl = "https://itstimer.vercel.app/";
 
 export const metadata: Metadata = {
   title: "Countdown Timer | Advanced Timer App",
